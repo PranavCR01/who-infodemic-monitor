@@ -25,6 +25,7 @@ services:
       - "8000:8000"
     volumes:
       - ../backend:/app
+      - infodemic_storage:/app/storage
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     depends_on:
       - db
@@ -38,6 +39,7 @@ services:
       - ../.env
     volumes:
       - ../backend:/app
+      - infodemic_storage:/app/storage
     command: celery -A app.worker.celery_app.celery_app worker --loglevel=INFO
     depends_on:
       - db
@@ -45,3 +47,4 @@ services:
 
 volumes:
   infodemic_pgdata:
+  infodemic_storage:
