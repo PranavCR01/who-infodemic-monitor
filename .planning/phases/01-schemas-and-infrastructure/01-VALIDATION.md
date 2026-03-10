@@ -19,8 +19,8 @@ created: 2026-03-09
 |----------|-------|
 | **Framework** | pytest 8.x |
 | **Config file** | `backend/pyproject.toml` — add `[tool.pytest.ini_options]` section |
-| **Quick run command** | `docker compose exec api pytest backend/tests/unit/ -x -q` |
-| **Full suite command** | `docker compose exec api pytest backend/tests/ -v` |
+| **Quick run command** | `docker compose exec api pytest app/tests/unit/ -x -q` |
+| **Full suite command** | `docker compose exec api pytest app/tests/ -v` |
 | **Estimated runtime** | ~10 seconds (unit only, no real containers or APIs) |
 
 ---
@@ -28,7 +28,7 @@ created: 2026-03-09
 ## Sampling Rate
 
 - **After every task commit:** `docker compose exec api python -c "import faster_whisper, easyocr, cv2, anthropic, openai, tiktoken; print('imports OK')"` (INFRA-01 smoke)
-- **After every plan wave:** `docker compose exec api pytest backend/tests/unit/ -x -q`
+- **After every plan wave:** `docker compose exec api pytest app/tests/unit/ -x -q`
 - **Before `/gsd:verify-work`:** Full suite must be green + INFRA-02 smoke passes
 - **Max feedback latency:** ~15 seconds
 
@@ -40,10 +40,10 @@ created: 2026-03-09
 |---------|------|------|-------------|-----------|-------------------|-------------|--------|
 | deps | 01 | 1 | INFRA-01 | smoke | `docker compose exec api python -c "import faster_whisper, easyocr, cv2, anthropic, openai, tiktoken; print('OK')"` | ❌ Wave 0 | ⬜ pending |
 | dockerfile | 01 | 1 | INFRA-02 | smoke | `docker compose exec worker python -c "from faster_whisper import WhisperModel; WhisperModel('base', device='cpu', compute_type='int8', local_files_only=True); print('OK')"` | ❌ Wave 0 | ⬜ pending |
-| config | 01 | 1 | INFRA-03 | unit | `docker compose exec api pytest backend/tests/unit/test_config.py -x` | ❌ Wave 0 | ⬜ pending |
-| fusion-schema | 02 | 2 | SCHEMA-01 | unit | `docker compose exec api pytest backend/tests/unit/test_schemas.py::test_fusion_result -x` | ❌ Wave 0 | ⬜ pending |
-| classification-schema | 02 | 2 | SCHEMA-02 | unit | `docker compose exec api pytest backend/tests/unit/test_schemas.py::test_classification_result -x` | ❌ Wave 0 | ⬜ pending |
-| result-model | 02 | 2 | SCHEMA-03 | unit | `docker compose exec api pytest backend/tests/unit/test_result_model.py -x` | ❌ Wave 0 | ⬜ pending |
+| config | 01 | 1 | INFRA-03 | unit | `docker compose exec api pytest app/tests/unit/test_config.py -x` | ❌ Wave 0 | ⬜ pending |
+| fusion-schema | 02 | 2 | SCHEMA-01 | unit | `docker compose exec api pytest app/tests/unit/test_schemas.py::test_fusion_result -x` | ❌ Wave 0 | ⬜ pending |
+| classification-schema | 02 | 2 | SCHEMA-02 | unit | `docker compose exec api pytest app/tests/unit/test_schemas.py::test_classification_result -x` | ❌ Wave 0 | ⬜ pending |
+| result-model | 02 | 2 | SCHEMA-03 | unit | `docker compose exec api pytest app/tests/unit/test_result_model.py -x` | ❌ Wave 0 | ⬜ pending |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
