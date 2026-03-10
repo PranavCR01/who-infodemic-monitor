@@ -5,6 +5,7 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
 from app.db.models.job import Job, JobStatus
+from app.db.models.result import Result
 from app.db.models.video import Video
 from app.db.session import get_db
 from app.worker.tasks import process_video_task
@@ -52,4 +53,29 @@ def get_job(job_id: str, db: Session = Depends(get_db)):
         "celery_task_id": job.celery_task_id,
         "created_at": job.created_at,
         "updated_at": job.updated_at,
+    }
+
+
+@router.get("/{job_id}/result")
+def get_result(job_id: str, db: Session = Depends(get_db)):
+    job = db.query(Job).filter(Job.id == job_id).first()
+    if not job:
+        raise HTTPException(status_code=404, detail="Job not found")
+    if job.status != JobStatus.SUCCESS:
+        raise HTTPException(status_code=202, detail=f"Job not complete — status: {job.status}")
+
+    result = db.query(Result).filter(Result.job_id == job_id).first()
+    if not result:
+        raise HTTPException(status_code=404, detail="Result not found")
+
+    return {
+        "job_id": job_id,
+        "label": result.label,
+        "confidence": result.confidence,
+        "explanation": result.explanation,
+        "evidence_snippets": result.evidence_snippets,
+        "provider": result.provider,
+        "model_used": result.model_used,
+        "latency_ms": result.latency_ms,
+        "created_at": result.created_at,
     }
