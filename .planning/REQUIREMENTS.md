@@ -9,13 +9,13 @@
 
 - [ ] **INFRA-01**: ML dependencies added to pyproject.toml: `faster-whisper`, `easyocr`, `anthropic`, `opencv-python-headless`, `ctranslate2`
 - [ ] **INFRA-02**: Dockerfile updated with ML system deps (`libgl1`, `libglib2.0-0`), model pre-warming commands for faster-whisper and EasyOCR during build (prevents cold-start on first job)
-- [ ] **INFRA-03**: New environment variables in `config.py` and `.env.example`: `WHISPER_PROVIDER`, `WHISPER_MODEL`, `INFERENCE_PROVIDER`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL`, `OLLAMA_BASE_URL`, `OLLAMA_MODEL`
+- [x] **INFRA-03**: New environment variables in `config.py` and `.env.example`: `WHISPER_PROVIDER`, `WHISPER_MODEL`, `INFERENCE_PROVIDER`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL`, `OLLAMA_BASE_URL`, `OLLAMA_MODEL`
 
 ### Data Schemas & Models
 
-- [ ] **SCHEMA-01**: `FusionResult` Pydantic schema: `transcript: str`, `visual_text: str`, `combined_content: str`, `metadata: dict`
-- [ ] **SCHEMA-02**: `ClassificationResult` Pydantic schema: `label: MisinfoLabel`, `confidence: float` (0.0–1.0 clamped), `explanation: str`, `evidence_snippets: list[str]`, `provider: str`, `model_used: str`, `latency_ms: int`
-- [ ] **SCHEMA-03**: `Result` SQLAlchemy ORM model with fields: `id` (UUID), `job_id` (FK → jobs.id, unique), `label` (String), `confidence` (Float), `explanation` (Text), `evidence_snippets` (JSON), `combined_content` (Text), `provider` (String), `model_used` (String), `latency_ms` (Integer), `created_at` (DateTime)
+- [x] **SCHEMA-01**: `FusionResult` Pydantic schema: `transcript: str`, `visual_text: str`, `combined_content: str`, `metadata: dict`
+- [x] **SCHEMA-02**: `ClassificationResult` Pydantic schema: `label: MisinfoLabel`, `confidence: float` (0.0–1.0 clamped), `explanation: str`, `evidence_snippets: list[str]`, `provider: str`, `model_used: str`, `latency_ms: int`
+- [x] **SCHEMA-03**: `Result` SQLAlchemy ORM model with fields: `id` (UUID), `job_id` (FK → jobs.id, unique), `label` (String), `confidence` (Float), `explanation` (Text), `evidence_snippets` (JSON), `combined_content` (Text), `provider` (String), `model_used` (String), `latency_ms` (Integer), `created_at` (DateTime)
 
 ### OCR Extraction
 
@@ -92,10 +92,10 @@
 |-------------|-------|--------|
 | INFRA-01 | Phase 1 | Pending |
 | INFRA-02 | Phase 1 | Pending |
-| INFRA-03 | Phase 1 | Pending |
-| SCHEMA-01 | Phase 1 | Pending |
-| SCHEMA-02 | Phase 1 | Pending |
-| SCHEMA-03 | Phase 1 | Pending |
+| INFRA-03 | Phase 1 | Complete |
+| SCHEMA-01 | Phase 1 | Complete |
+| SCHEMA-02 | Phase 1 | Complete |
+| SCHEMA-03 | Phase 1 | Complete |
 | OCR-01 | Phase 2 | Pending |
 | OCR-02 | Phase 2 | Pending |
 | TRANS-01 | Phase 2 | Pending |

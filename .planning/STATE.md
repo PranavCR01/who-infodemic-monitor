@@ -1,3 +1,19 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: planning
+stopped_at: Completed 01-schemas-and-infrastructure-00-PLAN.md
+last_updated: "2026-03-10T02:19:27.748Z"
+last_activity: 2026-03-09 — Roadmap created; Milestones 1 and 2 complete; Milestone 3 roadmap defines 5 phases covering all 27 v1 requirements
+progress:
+  total_phases: 5
+  completed_phases: 0
+  total_plans: 3
+  completed_plans: 1
+  percent: 33
+---
+
 # Project State
 
 ## Project Reference
@@ -14,7 +30,7 @@ Plan: 0 of TBD in current phase
 Status: Ready to plan
 Last activity: 2026-03-09 — Roadmap created; Milestones 1 and 2 complete; Milestone 3 roadmap defines 5 phases covering all 27 v1 requirements
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [███░░░░░░░] 33%
 
 ## Performance Metrics
 
@@ -34,6 +50,7 @@ Progress: [░░░░░░░░░░] 0%
 - Trend: -
 
 *Updated after each plan completion*
+| Phase 01-schemas-and-infrastructure P00 | 6 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -45,6 +62,7 @@ Recent decisions affecting current work:
 - [Infra]: Sync SQLAlchemy only — Celery workers are sync, async ORM breaks in worker context
 - [Infra]: Docker volume (`infodemic_storage`) shared between api and worker containers — verified working
 - [Roadmap]: Phase 2 (Extraction) and Phase 3 (Inference) are independent — can be planned in either order; both depend on Phase 1 schemas
+- [Phase 01-schemas-and-infrastructure]: pytest installed as optional dep [test] to avoid adding to production image by default
 
 ### Pending Todos
 
@@ -58,6 +76,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-09
-Stopped at: Roadmap written; ready to plan Phase 1
+Last session: 2026-03-10T02:19:27.744Z
+Stopped at: Completed 01-schemas-and-infrastructure-00-PLAN.md
 Resume file: None
