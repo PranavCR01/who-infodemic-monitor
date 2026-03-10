@@ -39,7 +39,6 @@ services:
       - ../.env
     volumes:
       - ../backend:/app
-<<<<<<< HEAD
       - infodemic_storage:/app/storage
     command: celery -A app.worker.celery_app.celery_app worker --loglevel=INFO --pool=solo
     depends_on:
