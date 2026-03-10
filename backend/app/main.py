@@ -7,6 +7,7 @@ from app.db.session import engine
 # Register models so Base.metadata knows about them
 import app.db.models.video  # noqa: F401
 import app.db.models.job    # noqa: F401
+import app.db.models.result  # noqa: F401
 
 app = FastAPI(title="WHO Infodemic Monitor API", version="0.1.0")
 
