@@ -18,7 +18,7 @@ Milestones 1 and 2 delivered a verified infrastructure stack: FastAPI, Celery, P
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Schemas and Infrastructure** - Add ML dependencies, extend config, define Pydantic schemas and Result ORM model
+- [x] **Phase 1: Schemas and Infrastructure** - Add ML dependencies, extend config, define Pydantic schemas and Result ORM model — COMPLETE
 - [ ] **Phase 2: Extraction Modules** - Port OCR, transcription, and multimodal fusion modules from prototype; bake models into Dockerfile
 - [ ] **Phase 3: Inference Providers** - Implement pluggable LLM provider layer (OpenAI, Anthropic, Ollama) with Protocol-based interface and provider factory
 - [ ] **Phase 4: Pipeline Wiring and Persistence** - Wire run_pipeline into Celery task, persist Result to DB, extend jobs API response
@@ -40,7 +40,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-00-PLAN.md — pytest infrastructure: unit test directory, stub files for all 6 requirements
 - [x] 01-01-PLAN.md — ML dependencies (pyproject.toml), Dockerfile pre-warm, config.py extension, .env.example, docker-compose.yml --pool=solo
-- [ ] 01-02-PLAN.md — Pydantic schemas (pipeline.py), Result ORM model (result.py), main.py registration
+- [x] 01-02-PLAN.md — Pydantic schemas (pipeline.py), Result ORM model (result.py), main.py registration
 
 ### Phase 2: Extraction Modules
 **Goal**: Audio transcription, on-screen OCR text extraction, and multimodal fusion all operate as clean, independently callable Python modules with no Streamlit dependencies
@@ -93,7 +93,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Schemas and Infrastructure | 2/3 | In Progress |  |
+| 1. Schemas and Infrastructure | 3/3 | Complete | 2026-03-10 |
 | 2. Extraction Modules | 0/TBD | Not started | - |
 | 3. Inference Providers | 0/TBD | Not started | - |
 | 4. Pipeline Wiring and Persistence | 0/TBD | Not started | - |
