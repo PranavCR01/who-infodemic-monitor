@@ -7,8 +7,8 @@
 
 ### Infrastructure & Configuration
 
-- [ ] **INFRA-01**: ML dependencies added to pyproject.toml: `faster-whisper`, `easyocr`, `anthropic`, `opencv-python-headless`, `ctranslate2`
-- [ ] **INFRA-02**: Dockerfile updated with ML system deps (`libgl1`, `libglib2.0-0`), model pre-warming commands for faster-whisper and EasyOCR during build (prevents cold-start on first job)
+- [x] **INFRA-01**: ML dependencies added to pyproject.toml: `faster-whisper`, `easyocr`, `anthropic`, `opencv-python-headless`, `ctranslate2`
+- [x] **INFRA-02**: Dockerfile updated with ML system deps (`libgl1`, `libglib2.0-0`), model pre-warming commands for faster-whisper and EasyOCR during build (prevents cold-start on first job)
 - [x] **INFRA-03**: New environment variables in `config.py` and `.env.example`: `WHISPER_PROVIDER`, `WHISPER_MODEL`, `INFERENCE_PROVIDER`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL`, `OLLAMA_BASE_URL`, `OLLAMA_MODEL`
 
 ### Data Schemas & Models
@@ -90,8 +90,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
-| INFRA-02 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
+| INFRA-02 | Phase 1 | Complete |
 | INFRA-03 | Phase 1 | Complete |
 | SCHEMA-01 | Phase 1 | Complete |
 | SCHEMA-02 | Phase 1 | Complete |
@@ -125,4 +125,4 @@
 
 ---
 *Requirements defined: 2026-03-09*
-*Last updated: 2026-03-09 after roadmap creation — all 27 requirements mapped*
+*Last updated: 2026-03-10 after plan 01-01 — INFRA-01 and INFRA-02 completed*

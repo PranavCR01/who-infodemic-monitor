@@ -38,8 +38,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-00-PLAN.md — pytest infrastructure: unit test directory, stub files for all 6 requirements
-- [ ] 01-01-PLAN.md — ML dependencies (pyproject.toml), Dockerfile pre-warm, config.py extension, .env.example, docker-compose.yml --pool=solo
+- [x] 01-00-PLAN.md — pytest infrastructure: unit test directory, stub files for all 6 requirements
+- [x] 01-01-PLAN.md — ML dependencies (pyproject.toml), Dockerfile pre-warm, config.py extension, .env.example, docker-compose.yml --pool=solo
 - [ ] 01-02-PLAN.md — Pydantic schemas (pipeline.py), Result ORM model (result.py), main.py registration
 
 ### Phase 2: Extraction Modules
@@ -93,7 +93,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Schemas and Infrastructure | 1/3 | In Progress|  |
+| 1. Schemas and Infrastructure | 2/3 | In Progress |  |
 | 2. Extraction Modules | 0/TBD | Not started | - |
 | 3. Inference Providers | 0/TBD | Not started | - |
 | 4. Pipeline Wiring and Persistence | 0/TBD | Not started | - |
