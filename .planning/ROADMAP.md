@@ -35,7 +35,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. `FusionResult` and `ClassificationResult` Pydantic schemas importable from `backend/app/core/schemas/pipeline.py` with all required fields present and validated
   3. `Result` ORM model exists in `backend/app/db/models/result.py`, is registered with `Base`, and `docker compose up` creates the `results` table without error
   4. All new environment variables (`WHISPER_PROVIDER`, `WHISPER_MODEL`, `INFERENCE_PROVIDER`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL`, `OLLAMA_BASE_URL`, `OLLAMA_MODEL`) are defined in `config.py` and documented in `.env.example`
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-00-PLAN.md — pytest infrastructure: unit test directory, stub files for all 6 requirements
+- [ ] 01-01-PLAN.md — ML dependencies (pyproject.toml), Dockerfile pre-warm, config.py extension, .env.example, docker-compose.yml --pool=solo
+- [ ] 01-02-PLAN.md — Pydantic schemas (pipeline.py), Result ORM model (result.py), main.py registration
 
 ### Phase 2: Extraction Modules
 **Goal**: Audio transcription, on-screen OCR text extraction, and multimodal fusion all operate as clean, independently callable Python modules with no Streamlit dependencies
@@ -88,7 +93,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Schemas and Infrastructure | 0/TBD | Not started | - |
+| 1. Schemas and Infrastructure | 0/3 | Not started | - |
 | 2. Extraction Modules | 0/TBD | Not started | - |
 | 3. Inference Providers | 0/TBD | Not started | - |
 | 4. Pipeline Wiring and Persistence | 0/TBD | Not started | - |
